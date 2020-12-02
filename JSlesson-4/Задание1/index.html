@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var num = +prompt('Введите число от 0 до 999');
+    var array = [];
+    var obj = {};
+
+    function numComposition(hundreds, tens, units) {
+      this.сотни = hundreds;
+      this.десятки = tens;
+      this.единицы = units;
+
+    }
+
+    function arr(x) {
+      if (x <= 999 && x >= 0) {
+        for (var i = 0; i < 3; i++) {
+          array.unshift(x % 10);
+          x = parseInt(x / 10);
+        }
+      }
+      else {
+        console.log('Ваше число не входить в диапозон [0;999]')
+        array.push(-1, -1, -1);
+      }
+      return array;
+    }
+
+    arr(num);
+    obj = new numComposition(array[0], array[1], array[2]);
+    console.log(obj);
+
+  </script>
+</body>
+
+</html>
